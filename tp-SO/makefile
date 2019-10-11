@@ -1,12 +1,12 @@
 all:	shellso
 
-shellso:	main.o	shellso.o	io.o
-	gcc	main.o	shellso.o	io.o	-o	shellso
+shellso:	main.o	shell.o	strings.o
+	gcc	main.o	shell.o	strings.o	-o	shellso
 
-main.o:	main.c	shellso.c	io.c
-	gcc	-c	-Wall	shellso.c
+main.o:	main.c	shell.c	strings.c
+	gcc	-c	-Wall	shell.c
 	gcc	-c	-Wall	main.c
-	gcc	-c	-Wall	io.c
+	gcc	-c	-Wall	strings.c
 
 clean:
-	rm main.o	shellso.o	io.o	shellso
+	rm main.o	shell.o	strings.o	shellso
